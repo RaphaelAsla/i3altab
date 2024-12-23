@@ -11,8 +11,8 @@ def main():
         current_focused_monitor = [w for w in i3.get_workspaces() if w.focused][0].output
 
         if current_focused_monitor in last_focused_by_monitor:
-            last_workspace_id = last_focused_by_monitor[current_focused_monitor]
-            i3.command(f"workspace {last_workspace_id}")
+            last_workspace = last_focused_by_monitor[current_focused_monitor]
+            i3.command(f"workspace {last_workspace}")
 
 if __name__ == '__main__':
     main()
